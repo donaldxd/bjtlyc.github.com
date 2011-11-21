@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Html5 Canvas Images</title>
+</head>
+<body>
+<canvas id="c" height="600" width="800"></canvas>
+<script type="text/javascript">
+	var c = document.getElementById('c');//取得Dom元素
+    var context = c.getContext("2d");//拿到Canvas的上下文 目前好像只支持2D渲染
+	var img = new Image();  //创建一个image的对象
+	img.src = 'images/map.jpg';
+    context.drawImage(img,0,0);
+    context.strokeStyle = '#FFFFFF';
+    context.beginPath();
+	//context.arc(200,80,1,0,Math.PI*2);
+	context.arc(200,80,5,0,Math.PI*2);
+	//context.arc(200,80,15,0,Math.PI*2);
+	context.closePath();
+	context.stroke();
+	//drawImage(image,x,y)  
+	//drawImage(image,x,y,width,height) width height可以重新定义图片的高宽
+	//drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    //前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。
+    //将图片切割 
+	for(var i=0; i<300; i = i+60){
+		for(var j=0; j<200;j = j+50){
+		 context.drawImage(img,i,j,60,50,i,200+j,59,49);
+		}
+	}
+</script>
+</body>
+</html>

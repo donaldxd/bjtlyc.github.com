@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Html5 Canvas Translate</title>
+</head>
+<body>
+
+<canvas id="c" height="1000" width="700"></canvas>
+
+<script type="text/javascript">
+	var c = document.getElementById('c');//取得Dom元素
+    var context = c.getContext("2d");//拿到Canvas的上下文 目前好像只支持2D渲染
+    //translate(x,y) 移动(x,y)  rotate(angle) 旋转angle
+	context.translate(100,100);
+
+	for(var i = 1; i<6; i++){
+		context.save();
+        context.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
+		for(var j = 0; j<i*6; j++){
+			context.rotate(Math.PI*2/(i*6));
+			context.beginPath();
+			context.arc(0,i*12.5,5,0,Math.PI*2,true);
+			context.fill();
+		}
+		context.restore();
+	}
+
+	context.translate(0,200)
+
+	for(var i = 0; i<30; i++){
+		context.fillStyle = 'rgb('+(10*i)+','+(255-10*i)+',255)';
+		context.beginPath();
+		context.arc(12.5,0,5,0,Math.PI*2,true);
+		context.arc(25,0,5,0,Math.PI*2,true);
+		context.arc(37.5,0,5,0,Math.PI*2,true);
+		context.arc(50,0,5,0,Math.PI*2,true);
+		context.arc(62.5,0,5,0,Math.PI*2,true);
+		context.arc(75,0,5,0,Math.PI*2,true);
+        context.fill();
+		context.rotate(Math.PI*2/(30));
+	}
+    context.save(); 
+	//scale(x, y) 缩放 
+	//x,y 分别是横轴和纵轴的缩放因子，它们都必须是正值。值比 1.0 小表示缩小，比 1.0 大则表示放大
+	context.translate(0,160);
+    context.beginPath();
+	context.scale(10,4);
+	context.arc(0,0,5,0,Math.PI*2,true);
+	context.fill();
+	
+	//transform(m11, m12, m21, m22, dx, dy) 变形
+	//这个方法必须将当前的变形矩阵乘上下面的矩阵：
+
+	//m11 	m21 	dx
+	//m12 	m22 	dy
+	//0 	0 	1
+</script>
+</body>
+</html>

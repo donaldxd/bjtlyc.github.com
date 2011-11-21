@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Html5 Canvas</title>
+</head>
+<body>
+
+<canvas id="c" height="2000" width="1000"></canvas>
+
+<script type="text/javascript">
+	var c = document.getElementById('c');//取得Dom元素
+    var context = c.getContext("2d");//拿到Canvas的上下文 目前好像只支持2D渲染
+    var y_gradient = context.createLinearGradient(0,100,0,300);
+    y_gradient.addColorStop(0,"white");
+	y_gradient.addColorStop(1,"blue");
+	context.fillStyle = y_gradient;
+	context.fillRect(100,100,400,200);
+
+	var x_gradient = context.createLinearGradient(100,0,500,0);
+    x_gradient.addColorStop(0,"white");
+	x_gradient.addColorStop(1,"blue");
+	context.fillStyle = x_gradient;
+	context.fillRect(100,400,400,200);
+
+	var xy_gradient = context.createLinearGradient(100,700,500,900);
+    xy_gradient.addColorStop(0,"white");
+	xy_gradient.addColorStop(1,"blue");
+	context.fillStyle = xy_gradient;
+	context.fillRect(100,700,400,200);
+
+	var m_gradient = context.createLinearGradient(100,1000,500,1200);
+    m_gradient.addColorStop(0,"white");
+	m_gradient.addColorStop(1,"blue");
+	m_gradient.addColorStop(2,"green");
+    m_gradient.addColorStop(3,"yellow");
+	m_gradient.addColorStop(3,"red");
+	m_gradient.addColorStop(3,"black");
+	context.fillStyle = m_gradient;
+	context.fillRect(100,1000,400,200);
+</script>
+
+</body>
+</html>

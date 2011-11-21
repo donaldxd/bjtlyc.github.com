@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Html5 Canvas Animations</title>
+</head>
+<body onload="init();" >
+<canvas id="c" width="800" height="200"></canvas>
+<script type="text/javascript">
+	var img = new Image();
+	img.src = 'images/pic.jpg';
+	var canvasXSize = 800;
+	var canvasYSize = 200;
+	var speed = 5;
+	var scale = 1.05;
+	var y = -4.5;
+
+	var dx = 0.75;
+	var imgW = img.width*scale;
+	var imgH = img.height*scale;
+	
+	var x = 0;
+    if(imgW > canvasXSize){ x = canvasXSize - imgW; }
+	
+	var clearX;
+	var clearY;
+	if(imgW > canvasXSize){ clearX = imgW; }else{ clearX = canvasXSize; }
+	if(imgH > canvasYSize){ clearY = imgH; }else{ clearY = canvasYSize; }
+	var ctx;
+
+	function init(){
+		ctx = document.getElementById('c').getContext('2d');
+		return setInterval(draw,speed);
+	}
+
+	function draw(){
+		ctx.clearRect(0,0,clearX,clearY);
+
+		if(imgW <= canvasXSize){
+			if(x > canvasXSize){ x = 0; }
+			if(x > (canvasXSize-imgW)){ 
+				ctx.drawImage(img,x-canvasXSize+1,y,imgW,imgH);
+			}
+		}else {
+	        if (x > (canvasXSize)) { x = canvasXSize-imgW; }
+	        if (x > (canvasXSize-imgW)) { ctx.drawImage(img,x-imgW+1,y,imgW,imgH); }
+	    }
+		
+		ctx.drawImage(img,x,y,imgW,imgH);
+	   
+	    x += dx;
+
+	}
+</script>
+</body>
+</html>
