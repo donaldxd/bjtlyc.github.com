@@ -98,7 +98,7 @@ h1 {
 	color: #191919;
 	text-align: left;
 	margin-bottom: 10px;
-	padding-bottom: 10px;
+/*	padding-bottom: 0;*/
 }
 
 h2 {
@@ -157,7 +157,7 @@ header {
 	position: relative;
 	background: #191919 ;
 	width: 100%;
-	height: 100px;
+	height: 140px;
 	display: block;
 }
 
@@ -170,7 +170,7 @@ div.bottom  {
    position: absolute;
    left: 0;
    bottom: 0px;
-   height: 3px;
+   height: 4px;
    width: 100%;
 	background: #00aeff; /* Old browsers */
    background: -moz-linear-gradient(left, #00aeff 1%, #71fc00 15%, #ffff00 30%, #fc7a00 50%, #cc00a6 70%, #ff0084 85%, #ff0000 100%); /* FF3.6+ */
@@ -208,12 +208,11 @@ footer {
 
 .container1 {
    width: 980px;
-   margin: 0 auto;
-   margin-left: auto;
-   margin-right: auto;
+  /* margin: 0 320px;*/
 	background-color: transparent;
 	padding-top: 20px;
 	position: relative;
+      /*  left: 220px;*/
 }
 
 .content1 {
@@ -272,29 +271,30 @@ footer {
 
 /************************ Navigation Menu ************************/
 nav {
-	position: relative;
-   width: 980px;
+	position: absolute;
+        left:150px;
+        width: 100%;
 	height: 40px;
 	margin: 0 auto;
-	padding-top: 30px;
+	padding-top: 70px;
 }
 
 nav ul li {
 	float: left;
 	line-height: normal;
-	margin-left: 55px;
+	margin-left: 120px;
 }
 
 nav ul li a{
-	font-size: 20px;
+	font-size: 21px;
 	font-family: Arial, Helvetica, sans-serif;
-	color:#fff;
+	color:#ffffff;
 	text-transform:capitalize;
 	font-weight:normal;
 	display:block;	/* IE6, IE7 line height fix */
 	background-color:transparent;
 	text-decoration:none;
-	margin-top:3px;
+	margin-top:4px;
 	padding:5px;
 	-moz-opacity: 0.66;
    -khtml-opacity: 0.66;
@@ -353,11 +353,11 @@ nav ul li a.prpl:hover{
    filter:alpha(opacity=100);
 }
 
-.green {	color: #9acd32; }
+.green {	color: #00cc33; }
 
 .pink { color: #FF3399; }
 
-.orange { color: #FF6600; }
+.orange { color: #FFFF00; }
 
 .blue { color: #00d0ff; }
 
@@ -368,6 +368,8 @@ nav ul li a.prpl:hover{
 .medium {font-size: 50px; }
 
 .small {font-size: 25px; }
+
+.msmall {font-size: 35px;}
 
 .rotate {
    -webkit-transform: rotate(-90deg);
@@ -388,14 +390,14 @@ nav ul li a.prpl:hover{
 	float: left;
 	width: 100%;
 	margin-top: 6px;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	background: none;
 }
 
 .welcome {
 	width: 945px;
 	position: relative;
-	padding: 15px 15px 25px 15px;
+	padding: 15px 15px 0px 15px;
 	background: transparent;
 }
 
@@ -406,10 +408,17 @@ nav ul li a.prpl:hover{
 	background: transparent;
 }
 
+.clock {
+       position: relative;
+       padding-top: 0px;
+       background:transparent;
+}
+
  #title {
    float: left;
-	width: 250px;
+	width: 200px;
 	height: 100px;
+        margin-left: 400px;
 }
 
 /* ---------- gallery styles start here ----------------------- */

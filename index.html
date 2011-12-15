@@ -9,6 +9,8 @@
 
    <link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/> 
    <link rel="stylesheet" type="text/css" href="styles.css"/>
+   
+   <script language="javascript" type="text/javascript" src="clock.js"></script>
 
 <!--[if lt IE 7]>
 <style type="text/css">
@@ -18,13 +20,13 @@
 <![endif]-->
 
 </head>
-<body>
+<body onload="startTime()">
 
 <!--start header-->
 <header>
    <div class="container1">
       <!--start title-->
-      <h1 class="fontface" id="title"><span class="orange">Yu</span><span class="pink">Ch</span><span class="purple">u</span><span class="blue ">an</span><span class="green ">Liu</span></h1>
+      <h1 class="fontface" id="title"><span class="orange">Yu</span><span class="pink">Chuan</span><span class="purple">&nbsp;Liu</span><span class="blue ">'s</span><span class="green ">&nbsp;&nbsp;Blog</span></h1>
       <!--end title-->
      
       <!--start menu-->
@@ -33,7 +35,7 @@
       <li><a href="index.html" class="grn">Home</a></li>
       <li><a href="about.html" class="pnk">Article</a></li>
       <li><a href="#" class="orng">Project</a></li>
-      <li><a href="#" class="blu">Picture</a></li>
+      <li><a href="picture.html" class="blu">Picture</a></li>
       <li><a href="#" class="prpl">Contact</a></li>
       </ul>
       </nav>
@@ -47,9 +49,20 @@
    <!--start intro-->
    <section id="intro">
      <div class="quote">
-      <section class="welcome">
-      <h2 class="fontface"> <span class="pink medium">Miao Miao </span><span class="green small rotate">and </span>Yu<span class="orange medium"> Yu</span></h2> 
+         <section class="welcome">
+            <h2 class="fontface"> <span class="pink  medium">Miao</span><span class="pink medium"> Miao </span><span class="green small rotate">and </span><span class="blue medium">Yu Yu</span></h2> 
      </div>
+         </section>
+
+     <section class="clock">
+     <h2 class="fontface"><span class="msmall"> have fallen in love for</h2> 
+     <h2 class="fontface pink"><div id="txt"></div></h2>
+     <br/>
+     <form style="text-align:center;">
+     <input type="button" onclick="showtime()" value="想知道昱昱和喵喵下次见面的时间吗">
+     </form>
+     </section>
+
    </section>
    <!--end intro-->
    
@@ -101,5 +114,6 @@
    <!--end footer-->
 
 <!-- Free template distributed by http://freehtml5templates.com -->   
+
  </body>
 </html>
