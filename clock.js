@@ -46,5 +46,5 @@ return day
 }
 
 function showtime()
-   {alert("2012年12月23日14点于苏州")   }
+   {alert("2012年12月22日15点于苏州")   }
 
